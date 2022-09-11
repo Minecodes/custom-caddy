@@ -1,0 +1,22 @@
+localhost {
+	templates
+	file_server {
+		root test/
+	}
+}
+
+rick.localhost {
+	respond "I'M PICKEL RICK!"
+}
+
+teapot.localhost {
+	route {
+		teapot
+	}
+}
+
+twitch.localhost {
+	route {
+		jailbait
+	}
+}
