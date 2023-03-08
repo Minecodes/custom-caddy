@@ -8,7 +8,7 @@ import (
 	"github.com/go-resty/resty/v2"
 
 	// plug in Caddy modules here
-	_ "github.com/Tasudo/caddy-jailbait"
+	_ "github.com/Tasudo/caddy-jailbait/v2"
 	_ "github.com/abiosoft/caddy-exec"
 	_ "github.com/caddyserver/caddy/v2/modules/standard"
 	_ "github.com/greenpau/caddy-git"
@@ -92,10 +92,10 @@ func main() {
 			caddycmd.Commands()["start"].Func(f)
 			return 0, nil
 		}),
-		Usage: caddycmd.Commands()["start"].Usage,
-		Short: caddycmd.Commands()["start"].Short,
-		Long:  caddycmd.Commands()["start"].Long,
-		Flags: caddycmd.Commands()["start"].Flags,
+		Usage: "",
+		Short: "Starts the Caddy process in the background, sends a message to your webhook and then returns",
+		Long:  "Starts the Caddy process in the background, sends a message to your webhook and then returns",
+		Flags: &flag.FlagSet{},
 	})
 
 	caddycmd.Main()
